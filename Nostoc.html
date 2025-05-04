@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///home/asela/Documents/Nostoc%20Web/HTML%20codes/Nostoc.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostoc - Mycelium Network</title>
+    <script src="https://cdn.tailwindcss.com/"></script><style type="text/css" id="operaUserStyle"></style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes sporeFloat {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        .spore-animation {
+            animation: sporeFloat 8s ease-in-out infinite;
+        }
+        
+        .glow-hover:hover {
+            filter: drop-shadow(0 0 8px rgba(132, 204, 22, 0.6));
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bg-fungal {
+            background: radial-gradient(circle at 10% 20%, #1a2e05, #0f172a);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #84cc16, #22c55e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .pinned-post {
+            border-left: 4px solid #84cc16;
+            background: rgba(132, 204, 22, 0.05);
+        }
+        
+        .entry-page {
+            background: radial-gradient(circle at 50% 0%, #1a2e05, #0c1321);
+            min-height: 100vh;
+        }
+        
+        .entry-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(132, 204, 22, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .entry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: rgba(132, 204, 22, 0.5);
+        }
+        
+        .admin-badge {
+            background: linear-gradient(90deg, #84cc16, #22c55e);
+            color: #0f172a;
+        }
+        
+        .subadmin-badge {
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+            color: white;
+        }
+        
+        .terms-container {
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .terms-checkbox {
+            accent-color: #84cc16;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.fixed{position:fixed}.inset-0{inset:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-24{height:6rem}.h-5{height:1.25rem}.max-h-60{max-height:15rem}.max-h-\[90vh\]{max-height:90vh}.min-h-screen{min-height:100vh}.w-11\/12{width:91.666667%}.w-12{width:3rem}.w-24{width:6rem}.w-5{width:1.25rem}.w-96{width:24rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.flex-1{flex:1 1 0%}.cursor-not-allowed{cursor:not-allowed}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-6{gap:1.5rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-blue-700{--tw-border-opacity:1;border-color:rgb(29 78 216 / var(--tw-border-opacity, 1))}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-green-700{--tw-border-opacity:1;border-color:rgb(21 128 61 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-blue-900{--tw-bg-opacity:1;background-color:rgb(30 58 138 / var(--tw-bg-opacity, 1))}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-900{--tw-bg-opacity:1;background-color:rgb(20 83 45 / var(--tw-bg-opacity, 1))}.bg-red-900{--tw-bg-opacity:1;background-color:rgb(127 29 29 / var(--tw-bg-opacity, 1))}.bg-opacity-80{--tw-bg-opacity:0.8}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pr-2{padding-right:0.5rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.opacity-50{opacity:0.5}.hover\:bg-blue-800:hover{--tw-bg-opacity:1;background-color:rgb(30 64 175 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-600:hover{--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-green-800:hover{--tw-bg-opacity:1;background-color:rgb(22 101 52 / var(--tw-bg-opacity, 1))}.hover\:bg-red-800:hover{--tw-bg-opacity:1;background-color:rgb(153 27 27 / var(--tw-bg-opacity, 1))}.hover\:text-green-400:hover{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}.focus\:ring-green-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(34 197 94 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:mb-0{margin-bottom:0px}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="bg-fungal min-h-screen text-gray-200 font-mono">
+    <!-- Entry Page -->
+    <div id="entryPage" class="entry-page flex flex-col">
+        <div class="container mx-auto px-4 py-12 flex-1">
+            <!-- Header -->
+            <header class="flex flex-col items-center mb-16">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="spore-animation">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#84cc16"></path>
+                            <path d="M8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12Z" fill="#1a2e05"></path>
+                            <path d="M12 8C13.1046 8 14 7.10457 14 6C14 4.89543 13.1046 4 12 4C10.8954 4 10 4.89543 10 6C10 7.10457 10.8954 8 12 8Z" fill="#22c55e"></path>
+                            <path d="M12 20C13.1046 20 14 19.1046 14 18C14 16.8954 13.1046 16 12 16C10.8954 16 10 16.8954 10 18C10 19.1046 10.8954 20 12 20Z" fill="#22c55e"></path>
+                            <path d="M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12Z" fill="#22c55e"></path>
+                            <path d="M8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14C7.10457 14 8 13.1046 8 12Z" fill="#22c55e"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-4xl font-bold text-gradient">Nostoc</h1>
+                </div>
+                <p class="text-gray-400 text-center max-w-2xl">A decentralized mycelium network for anonymous communication. Spores spread, ideas grow.</p>
+            </header>
+
+            <!-- Pinned Posts Section -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6 text-gradient flex items-center">
+                    <i class="fas fa-thumbtack mr-3"></i>
+                    Pinned Spores
+                </h2>
+                <div id="pinnedSpores" class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="bg-gray-900 border border-gray-800 rounded-lg p-5 pinned-post">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-thumbtack text-green-500"></i>
+                            <span class="font-medium">Muse</span>
+                        </div>
+                        <span class="text-xs text-gray-500">5/4/2025 09:32 AM</span>
+                    </div>
+                    <p class="text-gray-300">Nostoc is open you can Join now.</p>
+                    
+                </div></div>
+            </section>
+
+            <!-- Entry Options -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6 text-gradient">Enter the Network</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Admin Portal -->
+                    <div class="entry-card rounded-lg p-6 cursor-pointer" onclick="openAdminModal()">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-green-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-secret text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Admin Portal</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Access the network administration panel to moderate content and manage pinned spores.</p>
+                        <div class="text-green-500 text-sm flex items-center">
+                            <i class="fas fa-lock mr-2"></i>
+                            <span>Secure access required</span>
+                        </div>
+                    </div>
+
+                    <!-- Anonymous Entry -->
+                    <div class="entry-card rounded-lg p-6 cursor-pointer" onclick="showTermsModal()">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-ninja text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Anonymous Entry</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Enter the network without revealing your identity. Your digital spores remain untraceable.</p>
+                        <div class="text-green-500 text-sm flex items-center">
+                            <i class="fas fa-mask mr-2"></i>
+                            <span>No tracking, no logs</span>
+                        </div>
+                    </div>
+
+                    <!-- About Network -->
+                    <div class="entry-card rounded-lg p-6 cursor-pointer" onclick="showAboutPage()">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-info-circle text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">About Nostoc</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Learn about the mycelium network, its principles, and how it protects your anonymity.</p>
+                        <div class="text-green-500 text-sm flex items-center">
+                            <i class="fas fa-book mr-2"></i>
+                            <span>Read our manifesto</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center text-gray-500 text-sm mt-12">
+                <p>Nostoc Mycelium Network by ZendoLK</p>
+                <p class="mt-1">All connections are encrypted and anonymized</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 border border-green-700 rounded-lg p-6 w-11/12 max-w-3xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gradient">Terms and Conditions</h3>
+                <button onclick="closeTermsModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="terms-container mb-4 pr-2 scrollbar-hide">
+                <p class="text-sm mb-4">Welcome to Nostoc – Mycelium Network ("we", "our", or "the platform"). These Terms and Conditions ("Terms") govern your use of the Nostoc platform, which enables anonymous and decentralized public interaction. By accessing or using this platform, you agree to be bound by these Terms. If you do not agree, you must not use the platform.</p>
+                
+                <h4 class="font-bold mt-4 mb-2">1. Eligibility &amp; Usage</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>You must be at least 13 years of age to use this platform.</li>
+                    <li>You are solely responsible for any content you post.</li>
+                    <li>You agree not to post or promote:
+                        <ul class="list-disc pl-5 mt-1">
+                            <li>Hate speech, threats, or violence.</li>
+                            <li>False information or impersonation.</li>
+                            <li>Pornographic, illegal, or harmful content.</li>
+                            <li>Any personally identifiable information of others.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">2. Anonymity &amp; Privacy</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>We do not collect personal data or use tracking technologies.</li>
+                    <li>All data (posts, alias names, access codes) are stored locally in your browser via localStorage.</li>
+                    <li>You are encouraged to use aliases or remain anonymous when posting.</li>
+                    <li>Submissions are subject to moderation before being made visible.</li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">3. Content Moderation</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Posts may be pending, approved, pinned, hidden, or deleted by admin or authorized sub-admins.</li>
+                    <li>We reserve the right to remove any content without prior notice if it violates our guidelines.</li>
+                    <li>Repeated abuse may result in blocking your access through local identifiers.</li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">4. Admin Access</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>Admins and sub-admins access the dashboard using generated access codes.</li>
+                    <li>Sub-admins operate under limited privileges and may be revoked at any time.</li>
+                    <li>Sharing or selling admin codes is strictly prohibited.</li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">5. Intellectual Property</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>All original content you create remains yours, but by posting, you grant us a non-exclusive right to display it within the platform.</li>
+                    <li>You may not copy or redistribute platform code, branding, or proprietary systems without permission.</li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">6. Disclaimers</h4>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                    <li>This is an experimental, decentralized, and locally-hosted system.</li>
+                    <li>We do not guarantee uptime, data safety, or post longevity.</li>
+                    <li>We are not liable for damages caused by content shared on the platform.</li>
+                </ul>
+                
+                <h4 class="font-bold mt-4 mb-2">7. Changes to Terms</h4>
+                <p class="text-sm">We may update these Terms at any time. Continued use of the platform after changes implies your agreement to the revised terms.</p>
+                
+                <h4 class="font-bold mt-4 mb-2">8. Contact</h4>
+                <p class="text-sm">Since the platform supports anonymity and local-first access, there is no direct customer support. For developer or legal inquiries, please contact: Facebook: Zendo.lk</p>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-700">
+                <div class="flex items-center mb-4">
+                    <input type="checkbox" id="agreeTerms" class="terms-checkbox h-5 w-5 rounded">
+                    <label for="agreeTerms" class="ml-2 text-sm">I have read and agree to the Terms and Conditions</label>
+                </div>
+                
+                <div class="flex justify-end space-x-3">
+                    <button onclick="closeTermsModal()" class="px-4 py-2 border border-gray-700 rounded hover:bg-gray-800">Cancel</button>
+                    <button onclick="proceedWithAnonymousEntry()" id="agreeButton" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded flex items-center space-x-2 opacity-50 cursor-not-allowed" disabled="">
+                        <i class="fas fa-user-ninja"></i>
+                        <span>Continue Anonymously</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="aboutPage" class="bg-fungal min-h-screen hidden">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <button onclick="backToEntryPage()" class="flex items-center text-green-500 hover:text-green-400">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Entry
+                </button>
+                <button onclick="showTermsModal()" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded-lg flex items-center space-x-2">
+                    <i class="fas fa-user-ninja"></i>
+                    <span>Enter Anonymously</span>
+                </button>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-3xl font-bold mb-6 text-gradient">About Nostoc Network</h1>
+                
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-4 text-gradient">The Mycelium Principle</h2>
+                    <p class="mb-4">Nostoc is built on the biological model of mycelium networks - decentralized, resilient, and self-healing structures that facilitate communication and resource sharing without a central point of control.</p>
+                    <p>Just as mycelium connects trees in a forest, Nostoc connects individuals in a secure, anonymous network where information spreads like spores through the digital ecosystem.</p>
+                </div>
+                
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold mb-4 text-gradient">Core Features</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-fingerprint text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Anonymous posting:</strong> No accounts, no tracking, no connection to your identity</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shield-alt text-green-500 mt-1 mr-3"></i>
+                            <span><strong>End-to-end encryption:</strong> All content is encrypted before leaving your device</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-network-wired text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Decentralized storage:</strong> Content is distributed across multiple nodes in the network</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-thumbtack text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Pinned spores:</strong> Important messages from network curators</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-secret text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Trusted admins:</strong> Verified network maintainers ensure content quality</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4 text-gradient">Network Protocol</h2>
+                    <p class="mb-4">Nostoc uses a custom protocol combining:</p>
+                    <ul class="list-disc pl-5 space-y-2 mb-4">
+                        <li>Onion routing for anonymous communication</li>
+                        <li>Blockchain-inspired timestamping for content verification</li>
+                        <li>Peer-to-peer content distribution</li>
+                        <li>Zero-knowledge proofs for admin authentication</li>
+                    </ul>
+                    <p>The network is designed to be resistant to censorship and surveillance, with no single point of failure.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div id="mainApp" class="hidden">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <header class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="spore-animation">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#84cc16"></path>
+                            <path d="M8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12Z" fill="#1a2e05"></path>
+                            <path d="M12 8C13.1046 8 14 7.10457 14 6C14 4.89543 13.1046 4 12 4C10.8954 4 10 4.89543 10 6C10 7.10457 10.8954 8 12 8Z" fill="#22c55e"></path>
+                            <path d="M12 20C13.1046 20 14 19.1046 14 18C14 16.8954 13.1046 16 12 16C10.8954 16 10 16.8954 10 18C10 19.1046 10.8954 20 12 20Z" fill="#22c55e"></path>
+                            <path d="M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12Z" fill="#22c55e"></path>
+                            <path d="M8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14C7.10457 14 8 13.1046 8 12Z" fill="#22c55e"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-3xl font-bold text-gradient">Nostoc</h1>
+                </div>
+                <div class="flex space-x-4">
+                    <button onclick="backToEntryPage()" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center space-x-2 glow-hover">
+                        <i class="fas fa-door-open"></i>
+                        <span>Exit Network</span>
+                    </button>
+                    <button onclick="toggleCreateSpore()" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded-lg flex items-center space-x-2 glow-hover">
+                        <i class="fas fa-plus"></i>
+                        <span>New Spore</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Create Spore Form -->
+            <div id="createSporeForm" class="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8 hidden fade-in">
+                <h2 class="text-xl font-bold mb-4 text-gradient">Release a Spore</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Optional Alias</label>
+                        <input type="text" id="sporeAlias" placeholder="Fungal Entity #X" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Message</label>
+                        <textarea id="sporeContent" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500" placeholder="Let your thoughts spread through the network..."></textarea>
+                    </div>
+                    <div class="flex justify-end space-x-3">
+                        <button onclick="toggleCreateSpore()" class="px-4 py-2 border border-gray-700 rounded hover:bg-gray-800">Cancel</button>
+                        <button onclick="createSpore()" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded flex items-center space-x-2">
+                            <i class="fas fa-seedling"></i>
+                            <span>Release</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spores Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Spore cards will be dynamically inserted here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-12">
+                <div class="mx-auto w-24 h-24 mb-6 text-green-600 opacity-50">
+                    <i class="fas fa-spider fa-4x"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">The Network is Silent</h3>
+                <p class="text-gray-400 mb-4">Be the first to release a spore into the mycelium</p>
+                <button onclick="toggleCreateSpore()" class="px-4 py-2 bg-green-900 hover:bg-green-800 rounded-lg inline-flex items-center space-x-2">
+                    <i class="fas fa-plus"></i>
+                    <span>Create Spore</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 border border-green-700 rounded-lg p-6 w-96">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gradient">Admin Portal</h3>
+                <button onclick="closeAdminModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Access Code</label>
+                    <input type="password" id="adminCode" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500">
+                </div>
+                <button onclick="attemptAdminLogin()" class="w-full bg-green-900 hover:bg-green-800 text-white py-2 rounded flex items-center justify-center space-x-2">
+                    <i class="fas fa-unlock"></i>
+                    <span>Enter Network</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="fixed inset-0 bg-gray-900 z-50 overflow-y-auto hidden">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="spore-animation">
+                        <i class="fas fa-user-secret text-3xl text-green-500"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gradient">Admin Mycelium</h1>
+                    <span id="adminTypeBadge" class="px-2 py-1 rounded-full text-xs font-bold admin-badge">Main Admin</span>
+                </div>
+                <div class="flex space-x-3">
+                    <button onclick="backToEntryPage()" class="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-door-open"></i>
+                        <span>Exit Network</span>
+                    </button>
+                    <button onclick="logoutAdmin()" class="px-4 py-2 bg-red-900 hover:bg-red-800 rounded-lg flex items-center space-x-2">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gradient">Network Stats</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span>Total Spores</span>
+                            <span id="totalSpores" class="font-bold">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Pending Approval</span>
+                            <span id="pendingSpores" class="font-bold text-yellow-500">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Reported Spores</span>
+                            <span id="reportedSpores" class="font-bold text-red-500">0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Pinned Spores</span>
+                            <span id="pinnedSporesCount" class="font-bold text-green-500">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gradient">Quick Actions</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="showPendingSpores()" class="px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm flex items-center space-x-2">
+                            <i class="fas fa-clock"></i>
+                            <span>Review Pending</span>
+                        </button>
+                        <button onclick="showReportedSpores()" class="px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm flex items-center space-x-2">
+                            <i class="fas fa-flag"></i>
+                            <span>View Reports</span>
+                        </button>
+                        <button onclick="showAllSpores()" class="px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm flex items-center space-x-2">
+                            <i class="fas fa-network-wired"></i>
+                            <span>All Spores</span>
+                        </button>
+                        <button onclick="showPinnedSpores()" class="px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm flex items-center space-x-2">
+                            <i class="fas fa-thumbtack"></i>
+                            <span>Pinned Spores</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="adminManagementSection" class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 class="text-lg font-bold mb-4 text-gradient">Admin Management</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>Active Sub-Admins</span>
+                            <span id="activeSubAdmins" class="font-bold">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Generated Codes</span>
+                            <span id="generatedCodes" class="font-bold">0</span>
+                        </div>
+                        <button onclick="showSubAdminManagement()" class="w-full mt-2 px-3 py-2 bg-green-900 hover:bg-green-800 rounded text-sm flex items-center justify-center space-x-2">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Manage Sub-Admins</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Content Area -->
+            <div id="adminContent" class="bg-gray-800 rounded-lg border border-gray-700 p-6">
+                <div class="text-center py-12 text-gray-500">
+                    <i class="fas fa-network-wired text-4xl mb-4"></i>
+                    <p>Select an action to begin moderating the network</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub-Admin Management Modal -->
+    <div id="subAdminModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 border border-blue-700 rounded-lg p-6 w-11/12 max-w-4xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gradient">Sub-Admin Management</h3>
+                <button onclick="closeSubAdminModal()" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Generate New Sub-Admin Code -->
+                <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                    <h4 class="font-bold mb-3 text-gradient">Generate New Access Code</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Code Name (for reference)</label>
+                            <input type="text" id="subAdminCodeName" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Expiration (days)</label>
+                            <select id="subAdminExpiration" class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                <option value="7">7 days</option>
+                                <option value="30">30 days</option>
+                                <option value="90">90 days</option>
+                                <option value="365">1 year</option>
+                                <option value="0">Never</option>
+                            </select>
+                        </div>
+                        <button onclick="generateSubAdminCode()" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 rounded flex items-center justify-center space-x-2">
+                            <i class="fas fa-key"></i>
+                            <span>Generate Code</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Active Sub-Admins -->
+                <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                    <h4 class="font-bold mb-3 text-gradient">Active Sub-Admins</h4>
+                    <div id="activeSubAdminsList" class="space-y-2 max-h-60 overflow-y-auto">
+                        <!-- Sub-admins will be listed here -->
+                        <div class="text-center py-4 text-gray-500">
+                            <i class="fas fa-user-shield mb-2"></i>
+                            <p>No active sub-admins</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generated Codes -->
+                <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 md:col-span-2">
+                    <h4 class="font-bold mb-3 text-gradient">Generated Access Codes</h4>
+                    <div id="generatedCodesList" class="space-y-2 max-h-60 overflow-y-auto">
+                        <!-- Generated codes will be listed here -->
+                        <div class="text-center py-4 text-gray-500">
+                            <i class="fas fa-key mb-2"></i>
+                            <p>No generated codes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let spores = JSON.parse(localStorage.getItem('nostocSpores')) || [];
+        let adminCodes = JSON.parse(localStorage.getItem('nostocAdminCodes')) || [];
+        let activeSubAdmins = JSON.parse(localStorage.getItem('nostocSubAdmins')) || [];
+        
+        // Main admin code (would be server-side in real app)
+        const MAIN_ADMIN_CODE = "mycelium123";
+        
+        // Current admin session
+        let currentAdmin = null;
+        
+        // DOM Elements
+        const entryPage = document.getElementById('entryPage');
+        const aboutPage = document.getElementById('aboutPage');
+        const mainApp = document.getElementById('mainApp');
+        const sporesGrid = document.querySelector('#mainApp .grid');
+        const emptyState = document.getElementById('emptyState');
+        const createSporeForm = document.getElementById('createSporeForm');
+        const adminModal = document.getElementById('adminModal');
+        const adminDashboard = document.getElementById('adminDashboard');
+        const adminTypeBadge = document.getElementById('adminTypeBadge');
+        const adminManagementSection = document.getElementById('adminManagementSection');
+        const pinnedSporesContainer = document.getElementById('pinnedSpores');
+        const subAdminModal = document.getElementById('subAdminModal');
+        const activeSubAdminsList = document.getElementById('activeSubAdminsList');
+        const generatedCodesList = document.getElementById('generatedCodesList');
+        const activeSubAdminsCount = document.getElementById('activeSubAdmins');
+        const generatedCodesCount = document.getElementById('generatedCodes');
+        const termsModal = document.getElementById('termsModal');
+        const agreeTerms = document.getElementById('agreeTerms');
+        const agreeButton = document.getElementById('agreeButton');
+        
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPinnedSpores();
+            
+            // Initialize with a main admin code if none exists
+            if (adminCodes.length === 0) {
+                adminCodes.push({
+                    code: MAIN_ADMIN_CODE,
+                    name: "Main Admin",
+                    type: "main",
+                    createdAt: new Date().toISOString(),
+                    expiresAt: null,
+                    used: true
+                });
+                saveAdminCodes();
+            }
+            
+            // Set up terms checkbox interaction
+            agreeTerms.addEventListener('change', function() {
+                agreeButton.disabled = !this.checked;
+                agreeButton.classList.toggle('opacity-50', !this.checked);
+                agreeButton.classList.toggle('cursor-not-allowed', !this.checked);
+            });
+        });
+        
+        // Terms and Conditions functions
+        function showTermsModal() {
+            termsModal.classList.remove('hidden');
+            // Reset checkbox state
+            agreeTerms.checked = false;
+            agreeButton.disabled = true;
+            agreeButton.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+        
+        function closeTermsModal() {
+            termsModal.classList.add('hidden');
+        }
+        
+        function proceedWithAnonymousEntry() {
+            if (agreeTerms.checked) {
+                closeTermsModal();
+                enterAnonymously();
+            }
+        }
+        
+        // Render pinned spores to entry page
+        function renderPinnedSpores() {
+            const pinnedSpores = spores.filter(spore => spore.pinned && spore.status === 'approved');
+            
+            if (pinnedSpores.length === 0) {
+                pinnedSporesContainer.innerHTML = `
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-spider fa-2x mb-3"></i>
+                        <p>No spores pinned yet</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            pinnedSporesContainer.innerHTML = '';
+            
+            pinnedSpores.forEach(spore => {
+                const sporeCard = document.createElement('div');
+                sporeCard.className = 'bg-gray-900 border border-gray-800 rounded-lg p-5 pinned-post';
+                
+                sporeCard.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-thumbtack text-green-500"></i>
+                            <span class="font-medium">${spore.alias || `Spore #${spore.id.slice(0, 4)}`}</span>
+                        </div>
+                        <span class="text-xs text-gray-500">${formatDate(spore.timestamp)}</span>
+                    </div>
+                    <p class="text-gray-300">${spore.content}</p>
+                    ${spore.adminNote ? `<div class="mt-3 text-xs text-green-400 bg-green-900 bg-opacity-20 p-2 rounded">Admin note: ${spore.adminNote}</div>` : ''}
+                `;
+                
+                pinnedSporesContainer.appendChild(sporeCard);
+            });
+        }
+        
+        // Render all spores to the grid
+        function renderSpores() {
+            sporesGrid.innerHTML = '';
+            
+            const approvedSpores = spores.filter(spore => spore.status === 'approved' && !spore.pinned);
+            
+            if (approvedSpores.length === 0) {
+                updateEmptyState();
+                return;
+            }
+            
+            approvedSpores.forEach(spore => {
+                const sporeCard = createSporeCard(spore);
+                sporesGrid.appendChild(sporeCard);
+            });
+            
+            emptyState.classList.add('hidden');
+        }
+        
+        // Create a spore card element
+        function createSporeCard(spore) {
+            const card = document.createElement('div');
+            card.className = 'bg-gray-900 border border-gray-800 rounded-lg overflow-hidden fade-in hover:border-gray-700 transition-all';
+            
+            const randomHue = Math.floor(Math.random() * 40) + 100; // Greenish hues
+            const bgOpacity = '0.1';
+            
+            card.innerHTML = `
+                <div class="p-5">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background-color: hsla(${randomHue}, 80%, 50%, ${bgOpacity})">
+                                <i class="fas fa-spore text-xs" style="color: hsl(${randomHue}, 80%, 60%)"></i>
+                            </div>
+                            <span class="font-medium">${spore.alias || `Spore #${spore.id.slice(0, 4)}`}</span>
+                        </div>
+                        <span class="text-xs text-gray-500">${formatDate(spore.timestamp)}</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">${spore.content}</p>
+                    <div class="flex justify-between items-center text-xs">
+                        <button onclick="reportSpore('${spore.id}')" class="text-gray-400 hover:text-red-400 flex items-center space-x-1">
+                            <i class="fas fa-flag"></i>
+                            <span>Report</span>
+                        </button>
+                        <span class="text-gray-500">${spore.reports || 0} reports</span>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Toggle the create spore form
+        function toggleCreateSpore() {
+            createSporeForm.classList.toggle('hidden');
+            if (!createSporeForm.classList.contains('hidden')) {
+                document.getElementById('sporeContent').focus();
+            }
+        }
+        
+        // Create a new spore (now requires admin approval)
+        function createSpore() {
+            const alias = document.getElementById('sporeAlias').value.trim();
+            const content = document.getElementById('sporeContent').value.trim();
+            
+            if (!content) {
+                alert('Your spore needs a message to spread');
+                return;
+            }
+            
+            const newSpore = {
+                id: generateId(),
+                alias: alias || null,
+                content: content,
+                timestamp: new Date().toISOString(),
+                status: 'pending', // Now requires admin approval
+                reports: 0,
+                pinned: false,
+                adminNote: null
+            };
+            
+            spores.unshift(newSpore);
+            saveSpores();
+            toggleCreateSpore();
+            
+            // Clear form
+            document.getElementById('sporeAlias').value = '';
+            document.getElementById('sporeContent').value = '';
+            
+            // Show confirmation
+            alert('Your spore has been released but requires admin approval before becoming visible to others.');
+            
+            // If current user is admin, show pending spores
+            if (currentAdmin) {
+                showPendingSpores();
+            }
+        }
+        
+        // Report a spore
+        function reportSpore(sporeId) {
+            const sporeIndex = spores.findIndex(s => s.id === sporeId);
+            if (sporeIndex !== -1) {
+                if (!spores[sporeIndex].reports) {
+                    spores[sporeIndex].reports = 0;
+                }
+                spores[sporeIndex].reports += 1;
+                
+                // Auto-hide if reports reach 3
+                if (spores[sporeIndex].reports >= 3) {
+                    spores[sporeIndex].status = 'hidden';
+                }
+                
+                saveSpores();
+                renderSpores();
+                
+                // Show confirmation
+                alert('Spore reported to the network. Thank you for keeping Nostoc healthy.');
+            }
+        }
+        
+        // Admin functions
+        function openAdminModal() {
+            adminModal.classList.remove('hidden');
+        }
+        
+        function closeAdminModal() {
+            adminModal.classList.add('hidden');
+            document.getElementById('adminCode').value = '';
+        }
+        
+        function attemptAdminLogin() {
+            const code = document.getElementById('adminCode').value;
+            
+            // Check if it's the main admin code
+            if (code === MAIN_ADMIN_CODE) {
+                currentAdmin = {
+                    type: 'main',
+                    code: MAIN_ADMIN_CODE,
+                    name: 'Main Admin'
+                };
+                closeAdminModal();
+                adminDashboard.classList.remove('hidden');
+                adminTypeBadge.textContent = 'Main Admin';
+                adminTypeBadge.className = 'px-2 py-1 rounded-full text-xs font-bold admin-badge';
+                adminManagementSection.classList.remove('hidden');
+                loadAdminData();
+                return;
+            }
+            
+            // Check if it's a valid sub-admin code
+            const adminCode = adminCodes.find(ac => ac.code === code && !ac.used && (!ac.expiresAt || new Date(ac.expiresAt) > new Date()));
+            
+            if (adminCode) {
+                // Mark code as used
+                adminCode.used = true;
+                adminCode.usedAt = new Date().toISOString();
+                saveAdminCodes();
+                
+                // Create active sub-admin session
+                currentAdmin = {
+                    type: 'sub',
+                    code: adminCode.code,
+                    name: adminCode.name
+                };
+                
+                // Add to active sub-admins if not already there
+                const existingSubAdmin = activeSubAdmins.find(sa => sa.code === adminCode.code);
+                if (!existingSubAdmin) {
+                    activeSubAdmins.push({
+                        code: adminCode.code,
+                        name: adminCode.name,
+                        loggedInAt: new Date().toISOString()
+                    });
+                    saveActiveSubAdmins();
+                }
+                
+                closeAdminModal();
+                adminDashboard.classList.remove('hidden');
+                adminTypeBadge.textContent = 'Sub-Admin';
+                adminTypeBadge.className = 'px-2 py-1 rounded-full text-xs font-bold subadmin-badge';
+                adminManagementSection.classList.add('hidden');
+                loadAdminData();
+                return;
+            }
+            
+            alert('Invalid access code. The mycelium rejects you.');
+        }
+        
+        function logoutAdmin() {
+            adminDashboard.classList.add('hidden');
+            entryPage.classList.remove('hidden');
+            currentAdmin = null;
+        }
+        
+        function loadAdminData() {
+            document.getElementById('totalSpores').textContent = spores.length;
+            document.getElementById('pendingSpores').textContent = spores.filter(s => s.status === 'pending').length;
+            document.getElementById('reportedSpores').textContent = spores.filter(s => s.reports > 0).length;
+            document.getElementById('pinnedSporesCount').textContent = spores.filter(s => s.pinned).length;
+            
+            // Update admin management stats
+            activeSubAdminsCount.textContent = activeSubAdmins.length;
+            generatedCodesCount.textContent = adminCodes.filter(ac => ac.type === 'sub').length;
+        }
+        
+        function showPendingSpores() {
+            const pending = spores.filter(s => s.status === 'pending');
+            renderAdminSpores(pending, 'Pending Spores Awaiting Approval');
+        }
+        
+        function showReportedSpores() {
+            const reported = spores.filter(s => s.reports > 0);
+            renderAdminSpores(reported, 'Reported Spores');
+        }
+        
+        function showAllSpores() {
+            renderAdminSpores([...spores].reverse(), 'All Spores in Network');
+        }
+        
+        function showPinnedSpores() {
+            const pinned = spores.filter(s => s.pinned);
+            renderAdminSpores(pinned, 'Pinned Spores');
+        }
+        
+        function renderAdminSpores(sporeList, title) {
+            const adminContent = document.getElementById('adminContent');
+            adminContent.innerHTML = `
+                <h3 class="text-xl font-bold mb-6 text-gradient">${title}</h3>
+                <div class="space-y-4" id="adminSporesList">
+                    ${sporeList.length === 0 ? 
+                        '<div class="text-center py-8 text-gray-500">No spores found</div>' : 
+                        ''}
+                </div>
+            `;
+            
+            const listContainer = document.getElementById('adminSporesList');
+            
+            sporeList.forEach(spore => {
+                const sporeItem = document.createElement('div');
+                sporeItem.className = 'bg-gray-700 rounded-lg p-4 border border-gray-600';
+                
+                const statusBadge = spore.status === 'approved' ? 
+                    '<span class="bg-green-900 text-green-300 px-2 py-1 rounded text-xs">Approved</span>' :
+                    spore.status === 'pending' ?
+                    '<span class="bg-yellow-900 text-yellow-300 px-2 py-1 rounded text-xs">Pending</span>' :
+                    '<span class="bg-red-900 text-red-300 px-2 py-1 rounded text-xs">Hidden</span>';
+                
+                const reportsBadge = spore.reports > 0 ? 
+                    `<span class="bg-red-900 text-red-300 px-2 py-1 rounded text-xs">${spore.reports} Reports</span>` : 
+                    '';
+                
+                const pinnedBadge = spore.pinned ? 
+                    '<span class="bg-purple-900 text-purple-300 px-2 py-1 rounded text-xs">Pinned</span>' : 
+                    '';
+                
+                // Only show pin/unpin options for main admin
+                const pinButton = currentAdmin.type === 'main' ? `
+                    <button onclick="togglePinSpore('${spore.id}')" class="px-3 py-1 ${spore.pinned ? 'bg-purple-900 hover:bg-purple-800' : 'bg-gray-600 hover:bg-gray-500'} rounded text-xs flex items-center space-x-1">
+                        <i class="fas fa-thumbtack"></i>
+                        <span>${spore.pinned ? 'Unpin' : 'Pin'}</span>
+                    </button>
+                ` : '';
+                
+                sporeItem.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-medium">${spore.alias || `Spore #${spore.id.slice(0, 4)}`}</span>
+                            ${statusBadge}
+                            ${reportsBadge}
+                            ${pinnedBadge}
+                        </div>
+                        <span class="text-xs text-gray-400">${formatDate(spore.timestamp)}</span>
+                    </div>
+                    <p class="text-gray-300 mb-3 text-sm">${spore.content}</p>
+                    <div class="flex flex-wrap gap-2">
+                        ${spore.status !== 'approved' ? 
+                            `<button onclick="approveSpore('${spore.id}')" class="px-3 py-1 bg-green-900 hover:bg-green-800 rounded text-xs flex items-center space-x-1">
+                                <i class="fas fa-check"></i>
+                                <span>Approve</span>
+                            </button>` : ''}
+                        ${spore.status !== 'hidden' ? 
+                            `<button onclick="hideSpore('${spore.id}')" class="px-3 py-1 bg-red-900 hover:bg-red-800 rounded text-xs flex items-center space-x-1">
+                                <i class="fas fa-eye-slash"></i>
+                                <span>Hide</span>
+                            </button>` : ''}
+                        ${pinButton}
+                        <button onclick="deleteSpore('${spore.id}')" class="px-3 py-1 bg-gray-600 hover:bg-gray-500 rounded text-xs flex items-center space-x-1">
+                            <i class="fas fa-trash"></i>
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                    ${spore.pinned && currentAdmin.type === 'main' ? `
+                    <div class="mt-3">
+                        <label class="block text-xs font-medium mb-1">Admin Note (for pinned spores)</label>
+                        <input type="text" id="adminNote-${spore.id}" value="${spore.adminNote || ''}" class="w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-green-500" placeholder="Add context for this pinned spore">
+                        <button onclick="saveAdminNote('${spore.id}')" class="mt-1 px-2 py-1 bg-blue-900 hover:bg-blue-800 rounded text-xs flex items-center space-x-1">
+                            <i class="fas fa-save"></i>
+                            <span>Save Note</span>
+                        </button>
+                    </div>` : ''}
+                `;
+                
+                listContainer.appendChild(sporeItem);
+            });
+        }
+        
+        function approveSpore(sporeId) {
+            const sporeIndex = spores.findIndex(s => s.id === sporeId);
+            if (sporeIndex !== -1) {
+                spores[sporeIndex].status = 'approved';
+                saveSpores();
+                loadAdminData();
+                renderAdminSpores(spores.filter(s => s.status === 'pending'), 'Pending Spores Awaiting Approval');
+                renderSpores();
+                renderPinnedSpores();
+            }
+        }
+        
+        function hideSpore(sporeId) {
+            const sporeIndex = spores.findIndex(s => s.id === sporeId);
+            if (sporeIndex !== -1) {
+                spores[sporeIndex].status = 'hidden';
+                saveSpores();
+                loadAdminData();
+                renderSpores();
+                renderPinnedSpores();
+                
+                // Refresh current admin view
+                const currentTitle = document.querySelector('#adminContent h3').textContent;
+                if (currentTitle.includes('All Spores') || currentTitle.includes('Reported')) {
+                    showAllSpores();
+                } else if (currentTitle.includes('Pending')) {
+                    showPendingSpores();
+                }
+            }
+        }
+        
+        function togglePinSpore(sporeId) {
+            // Only allow main admin to pin/unpin
+            if (currentAdmin.type !== 'main') return;
+            
+            const sporeIndex = spores.findIndex(s => s.id === sporeId);
+            if (sporeIndex !== -1) {
+                spores[sporeIndex].pinned = !spores[sporeIndex].pinned;
+                saveSpores();
+                loadAdminData();
+                renderSpores();
+                renderPinnedSpores();
+                
+                // Refresh current admin view
+                const currentTitle = document.querySelector('#adminContent h3').textContent;
+                if (currentTitle.includes('Pinned')) {
+                    showPinnedSpores();
+                } else if (currentTitle.includes('All Spores')) {
+                    showAllSpores();
+                }
+            }
+        }
+        
+        function saveAdminNote(sporeId) {
+            // Only allow main admin to save notes
+            if (currentAdmin.type !== 'main') return;
+            
+            const sporeIndex = spores.findIndex(s => s.id === sporeId);
+            if (sporeIndex !== -1) {
+                const noteInput = document.getElementById(`adminNote-${sporeId}`);
+                spores[sporeIndex].adminNote = noteInput.value.trim();
+                saveSpores();
+                renderPinnedSpores();
+                
+                // Show confirmation
+                const confirmation = document.createElement('div');
+                confirmation.className = 'fixed bottom-4 right-4 bg-green-900 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2';
+                confirmation.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <span>Note saved</span>
+                `;
+                document.body.appendChild(confirmation);
+                
+                setTimeout(() => {
+                    confirmation.remove();
+                }, 2000);
+            }
+        }
+        
+        function deleteSpore(sporeId) {
+            if (confirm('Permanently remove this spore from the network?')) {
+                spores = spores.filter(s => s.id !== sporeId);
+                saveSpores();
+                loadAdminData();
+                renderSpores();
+                renderPinnedSpores();
+                
+                // Refresh current admin view
+                const currentTitle = document.querySelector('#adminContent h3').textContent;
+                if (currentTitle.includes('All Spores')) {
+                    showAllSpores();
+                } else if (currentTitle.includes('Pending')) {
+                    showPendingSpores();
+                } else if (currentTitle.includes('Reported')) {
+                    showReportedSpores();
+                } else if (currentTitle.includes('Pinned')) {
+                    showPinnedSpores();
+                }
+            }
+        }
+        
+        // Sub-Admin Management functions
+        function showSubAdminManagement() {
+            renderSubAdminLists();
+            subAdminModal.classList.remove('hidden');
+        }
+        
+        function closeSubAdminModal() {
+            subAdminModal.classList.add('hidden');
+        }
+        
+        function renderSubAdminLists() {
+            // Render active sub-admins
+            if (activeSubAdmins.length === 0) {
+                activeSubAdminsList.innerHTML = `
+                    <div class="text-center py-4 text-gray-500">
+                        <i class="fas fa-user-shield mb-2"></i>
+                        <p>No active sub-admins</p>
+                    </div>
+                `;
+            } else {
+                activeSubAdminsList.innerHTML = '';
+                activeSubAdmins.forEach(subAdmin => {
+                    const subAdminItem = document.createElement('div');
+                    subAdminItem.className = 'bg-gray-700 rounded p-3 flex justify-between items-center';
+                    subAdminItem.innerHTML = `
+                        <div>
+                            <div class="font-medium">${subAdmin.name}</div>
+                            <div class="text-xs text-gray-400">Logged in: ${formatDate(subAdmin.loggedInAt)}</div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button onclick="revokeSubAdmin('${subAdmin.code}')" class="px-2 py-1 bg-red-900 hover:bg-red-800 rounded text-xs">
+                                <i class="fas fa-user-slash"></i>
+                            </button>
+                        </div>
+                    `;
+                    activeSubAdminsList.appendChild(subAdminItem);
+                });
+            }
+            
+            // Render generated codes
+            const generatedSubAdminCodes = adminCodes.filter(ac => ac.type === 'sub');
+            
+            if (generatedSubAdminCodes.length === 0) {
+                generatedCodesList.innerHTML = `
+                    <div class="text-center py-4 text-gray-500">
+                        <i class="fas fa-key mb-2"></i>
+                        <p>No generated codes</p>
+                    </div>
+                `;
+            } else {
+                generatedCodesList.innerHTML = '';
+                generatedSubAdminCodes.forEach(code => {
+                    const codeItem = document.createElement('div');
+                    codeItem.className = 'bg-gray-700 rounded p-3 flex justify-between items-center';
+                    
+                    const isExpired = code.expiresAt && new Date(code.expiresAt) < new Date();
+                    const isUsed = code.used;
+                    
+                    codeItem.innerHTML = `
+                        <div>
+                            <div class="font-medium">${code.name}</div>
+                            <div class="text-xs ${isExpired ? 'text-red-400' : 'text-gray-400'}">
+                                ${code.expiresAt ? `Expires: ${formatDate(code.expiresAt)}` : 'Never expires'}
+                                ${isUsed ? ' • Used' : ''}
+                                ${isExpired ? ' • Expired' : ''}
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="text-xs font-mono bg-gray-900 px-2 py-1 rounded">${code.code}</div>
+                            <button onclick="copyCodeToClipboard('${code.code}')" class="px-2 py-1 bg-gray-600 hover:bg-gray-500 rounded text-xs">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <button onclick="deleteAdminCode('${code.code}')" class="px-2 py-1 bg-red-900 hover:bg-red-800 rounded text-xs">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    
+                    if (isExpired || isUsed) {
+                        codeItem.classList.add('opacity-60');
+                    }
+                    
+                    generatedCodesList.appendChild(codeItem);
+                });
+            }
+        }
+        
+        function generateSubAdminCode() {
+            const name = document.getElementById('subAdminCodeName').value.trim();
+            const expirationDays = parseInt(document.getElementById('subAdminExpiration').value);
+            
+            if (!name) {
+                alert('Please enter a name for this code');
+                return;
+            }
+            
+            // Generate a random code
+            const code = generateRandomCode(12);
+            
+            // Calculate expiration date if needed
+            let expiresAt = null;
+            if (expirationDays > 0) {
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + expirationDays);
+                expiresAt = expirationDate.toISOString();
+            }
+            
+            // Add to admin codes
+            adminCodes.push({
+                code: code,
+                name: name,
+                type: 'sub',
+                createdAt: new Date().toISOString(),
+                expiresAt: expiresAt,
+                used: false
+            });
+            
+            saveAdminCodes();
+            
+            // Show confirmation with the code
+            alert(`Sub-admin access code generated:\n\nCode: ${code}\nName: ${name}\n\nMake sure to copy this code now as it won't be shown again.`);
+            
+            // Clear form
+            document.getElementById('subAdminCodeName').value = '';
+            
+            // Refresh lists
+            renderSubAdminLists();
+            loadAdminData();
+        }
+        
+        function revokeSubAdmin(code) {
+            if (confirm('Revoke this sub-admin\'s access? They will need a new code to log in again.')) {
+                // Remove from active sub-admins
+                activeSubAdmins = activeSubAdmins.filter(sa => sa.code !== code);
+                saveActiveSubAdmins();
+                
+                // Mark code as used (can't be used again)
+                const codeIndex = adminCodes.findIndex(ac => ac.code === code);
+                if (codeIndex !== -1) {
+                    adminCodes[codeIndex].used = true;
+                    saveAdminCodes();
+                }
+                
+                // If this is the current admin, log them out
+                if (currentAdmin && currentAdmin.code === code) {
+                    logoutAdmin();
+                }
+                
+                // Refresh lists
+                renderSubAdminLists();
+                loadAdminData();
+            }
+        }
+        
+        function deleteAdminCode(code) {
+            if (confirm('Permanently delete this admin code?')) {
+                adminCodes = adminCodes.filter(ac => ac.code !== code);
+                saveAdminCodes();
+                
+                // Refresh lists
+                renderSubAdminLists();
+                loadAdminData();
+            }
+        }
+        
+        function copyCodeToClipboard(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                const confirmation = document.createElement('div');
+                confirmation.className = 'fixed bottom-4 right-4 bg-green-900 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2';
+                confirmation.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <span>Code copied</span>
+                `;
+                document.body.appendChild(confirmation);
+                
+                setTimeout(() => {
+                    confirmation.remove();
+                }, 2000);
+            });
+        }
+        
+        // Helper functions
+        function generateId() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+        
+        function generateRandomCode(length) {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        
+        function formatDate(isoString) {
+            const date = new Date(isoString);
+            return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        }
+        
+        function saveSpores() {
+            localStorage.setItem('nostocSpores', JSON.stringify(spores));
+        }
+        
+        function saveAdminCodes() {
+            localStorage.setItem('nostocAdminCodes', JSON.stringify(adminCodes));
+        }
+        
+        function saveActiveSubAdmins() {
+            localStorage.setItem('nostocSubAdmins', JSON.stringify(activeSubAdmins));
+        }
+        
+        function updateEmptyState() {
+            if (spores.filter(s => s.status === 'approved' && !s.pinned).length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
+        }
+        
+        // Page navigation functions
+        function enterAnonymously() {
+            entryPage.classList.add('hidden');
+            mainApp.classList.remove('hidden');
+            renderSpores();
+        }
+        
+        function backToEntryPage() {
+            mainApp.classList.add('hidden');
+            adminDashboard.classList.add('hidden');
+            aboutPage.classList.add('hidden');
+            entryPage.classList.remove('hidden');
+        }
+        
+        function showAboutPage() {
+            entryPage.classList.add('hidden');
+            aboutPage.classList.remove('hidden');
+        }
+    </script>
+
+</body></html>
